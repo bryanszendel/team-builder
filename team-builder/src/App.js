@@ -8,7 +8,7 @@ function App() {
   console.log(member)
   return (
     <div className="App">
-      <div>
+      <div className="member-list">
         <h2>{member.data.name}</h2>
       </div>
       <Form />
