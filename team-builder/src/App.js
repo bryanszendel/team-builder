@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Form from './Form';
 
 function App() {
   
@@ -8,7 +8,10 @@ function App() {
   console.log(member)
   return (
     <div className="App">
-      <h2>{member.data.name}</h2>
+      <div>
+        <h2>{member.data.name}</h2>
+      </div>
+      <Form />
     </div>
   );
 }
