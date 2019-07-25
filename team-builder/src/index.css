@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.team-list {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+
+.team-list h2 {
+  margin: 15px;
+}
+
+.team-list button {
+  margin-bottom: 15px;
+}

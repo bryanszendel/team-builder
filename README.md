@@ -35,7 +35,7 @@ Follow these steps for completing your project.
 
 ## Minimum Viable Product
 
-- [ ] Render a list of team members from state
+- [X] Render a list of team members from state
 - [ ] Build a form to add a new member to the list of members
 - [ ] Add the functionality to edit team members
 
@@ -51,15 +51,15 @@ Follow these steps for completing your project.
 
 - [X] In `Form.js` build out your markup
 - [X] Build inputs for `name`, `email` and `role` (backend engineer, frontend engineer, designer, etc. Use your imagination)
-- Import the useState hook and utilize what we learned about two-way data binding
-- Render your `Form` component in `App` and pass a setter method (the `set_____` method from your team members state in `App`) down to it so you can add team members to your state.
+- [X] Import the useState hook and utilize what we learned about two-way data binding
+- [X] Render your `Form` component in `App` and pass a setter method (the `set_____` method from your team members state in `App`) down to it so you can add team members to your state.
 
 ### STEP 3 - Add the edit functionality
 
 Next we're going to reuse the `Form` component to edit team members
 
 **Get App.js ready for editing members**
-- Add an edit button, or an edit icon next to each member you are rendering. When the button/icon is clicked, we want to set that member to a state property in `App` called `memberToEdit`. The function to do this should live in `App`, even if the button/icon invoking it are in a different component. Just pass the function down as a prop.
+- [X] Add an edit button, or an edit icon next to each member you are rendering. When the button/icon is clicked, we want to set that member to a state property in `App` called `memberToEdit`. The function to do this should live in `App`, even if the button/icon invoking it are in a different component. Just pass the function down as a prop.
 
 **Get Form.js ready to edit members**
 - Pass `memberToEdit` down to `Form.js`

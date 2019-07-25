@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 
-function Form() {
-const [user, setUser] = useState({ username: '', email: '', role: '' })
+function Form({members, setMembers, addMember}) {
+  const initialFormState = { id: null, username: "", email: "", role: ""}
+  const [user, setUser] = useState(initialFormState)
 
-function handleChange(event) {
-  const updatedUser = { ...user, [event.target.name]: event.target.value };
-  setUser(updatedUser)
-}
+  const handleChange = event => {
+    const updatedUser = { ...user, [event.target.name]: event.target.value }
+    setUser(updatedUser) 
+    // console.log(user)
+  }
 
-function handleSubmit(event) {
-  event.preventDefault();
-  console.log('Username: ', user)
-}
+  const handleSubmit = event => {
+    event.preventDefault();
+    addMember(user)
+    setUser(initialFormState)
+  }
 
 return (
     <form onSubmit={handleSubmit}>
@@ -21,19 +24,19 @@ return (
           <label htmlFor="username">
             Name:
             <div>
-              <input type="text" name="username" onChange={handleChange}/>
+              <input type="text" name="username" value={user.username} onChange={handleChange}/>
             </div>
           </label>
           <label htmlFor="email">
             Email:
             <div>
-              <input type="email" name="email" onChange={handleChange}/>
+              <input type="email" name="email" value={user.email} onChange={handleChange}/>
             </div>
           </label>
           <label htmlFor="role">
             Role:
             <div>
-              <select type="select" name="role" onChange={handleChange}>
+              <select type="select" name="role" value={user.role} onChange={handleChange}>
                 <option value="choose">-- Choose Role --</option>
                 <option value="ui_developer">UI Developer</option>
                 <option value="front_end_engineer">Front End Engineer</option>
