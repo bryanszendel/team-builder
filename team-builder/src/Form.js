@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function Form({members, setMembers, addMember}) {
+function Form(props) {
   const initialFormState = { id: null, username: "", email: "", role: ""}
   const [user, setUser] = useState(initialFormState)
 
@@ -12,9 +12,13 @@ function Form({members, setMembers, addMember}) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    addMember(user)
+    props.addMember(user)
     setUser(initialFormState)
   }
+
+  useEffect(() => {
+    setUser(props.currentMember)
+  }, [props])
 
 return (
     <form onSubmit={handleSubmit}>
@@ -41,7 +45,7 @@ return (
                 <option value="ui_developer">UI Developer</option>
                 <option value="front_end_engineer">Front End Engineer</option>
                 <option value="back_end_engineer">Back End Engineer</option>
-                <option value="ui_developer">UX Designer</option>
+                <option value="ux_designer">UX Designer</option>
               </select>
             </div>
           </label>  

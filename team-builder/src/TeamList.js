@@ -1,14 +1,16 @@
 import React from 'react'
 
-function TeamList(props) {
+function TeamList({members, memberToEdit}) {
 // console.log('Mapped Members', props.members)
       return (
         <div className="team-list">
-          {props.members.map(member => {
+          {members.map(member => {
             return (
               <div>
-                <h2 {...props} key={member.id}>{member.username}</h2>
-                <button>EDIT</button>
+                <h2 key={member.id}>{member.username}</h2>
+                <button key={member.id} onClick={() => {
+                  memberToEdit(member)
+                  }}>EDIT</button>
               </div>
             )
           })}
@@ -17,9 +19,3 @@ function TeamList(props) {
 }
 
 export default TeamList;
-
-// {props.teamMembers.map(teamMember => {
-//   return (
-//       <CardMaker teamMember={teamMember}/>
-//   )
-// })}
